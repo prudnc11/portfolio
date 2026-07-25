@@ -359,7 +359,7 @@ function App() {
         </section>
 
         {/* Footer */}
-        <footer className="mt-[200px] border-t border-border py-6">
+        <footer className="mt-24 border-t border-border py-6">
           <p className="font-serif text-sm text-muted">© Tribe · Prudence</p>
         </footer>
       </div>
