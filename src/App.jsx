@@ -3,18 +3,19 @@ import { Analytics } from "@vercel/analytics/react";
 import albumArt from "./assets/album-art.png";
 import nexxasocialIcon from "./assets/icons/nexxasocial.svg";
 import melcartIcon from "./assets/icons/melcart.svg";
-import youtubeMusicIcon from "./assets/icons/youtube-music.svg";
-import spotifyIcon from "./assets/icons/spotify.svg";
-import appleMusicIcon from "./assets/icons/apple-music.svg";
+import figmaIcon from "./assets/icons/figma.svg";
+import claudeIcon from "./assets/icons/claude.png";
+import vscodeIcon from "./assets/icons/vscode.svg";
 
 const projects = [
   {
     name: "Aggregator Admin",
     company: "byteship.dev",
     description: "Managing the network of commodity aggregators",
+    link: "http://cf-admin-jade.vercel.app",
     caseStudy: {
       challenge:
-        "Agricultural commodity aggregators across Africa lacked a centralized system to manage inventory, track transactions, and coordinate logistics — leading to data silos and operational inefficiency.",
+        "Agricultural commodity aggregators across Africa lacked a centralized system to manage inventory, track transactions, and coordinate logistics. Leading to data silos and operational inefficiency.",
       solution:
         "Built an admin dashboard with real-time inventory tracking, aggregator network visualization, and automated reporting. Designed role-based access for field agents and managers.",
       impact: [
@@ -31,7 +32,7 @@ const projects = [
     description: "Supply chain infrastructure for Africa downstream sector",
     caseStudy: {
       challenge:
-        "Nigeria's downstream petroleum sector relied on fragmented, manual processes for ordering, invoicing, and delivery tracking — causing delays and revenue leakage.",
+        "Nigeria's downstream petroleum sector relied on fragmented, manual processes for ordering, invoicing, and delivery tracking. Causing delays and revenue leakage.",
       solution:
         "Designed and built a B2B marketplace connecting petroleum distributors with retailers. Integrated payment processing, order management, and delivery logistics into a single platform.",
       impact: [
@@ -49,7 +50,7 @@ const projects = [
     link: "https://nexaa-frontend.vercel.app/dashboard",
     caseStudy: {
       challenge:
-        "Small businesses and creators struggled to maintain consistent social media presence — manually scheduling posts, writing captions, and analyzing performance across multiple platforms.",
+        "Small businesses and creators struggled to maintain consistent social media presence. Manually scheduling posts, writing captions, and analyzing performance across multiple platforms.",
       solution:
         "Created an AI-powered social media management tool that generates content suggestions, auto-schedules posts, and provides unified analytics. Built with a focus on simplicity for non-technical users.",
       impact: [
@@ -61,20 +62,21 @@ const projects = [
     },
   },
   {
-    name: "Dev tool",
+    name: "Sage",
     company: "byteship.dev",
-    description: "Managing APIs for payments",
+    description: "Project management for engineering teams",
+    link: "https://sage-blond-eight.vercel.app",
     caseStudy: {
       challenge:
-        "Developers integrating payment APIs faced poor documentation, inconsistent error handling, and no sandbox environment — slowing down integration timelines significantly.",
+        "Engineering teams needed a fast, opinionated project tracker that felt native to their workflow. Existing tools were either too bloated or too simple for real sprint management.",
       solution:
-        "Built a developer portal with interactive API documentation, a sandbox testing environment, and webhook management. Designed clear error states and provided code snippets in multiple languages.",
+        "Designed and built a Linear-inspired project management app with kanban boards, issue tracking, team workspaces, automation rules, roadmap views, and an AI assistant for querying project state.",
       impact: [
-        "Reduced average integration time from 2 weeks to 3 days",
-        "Interactive sandbox caught 80% of issues before production",
-        "Developer satisfaction score increased to 4.7/5",
+        "Full issue lifecycle: backlog, in progress, review, done",
+        "Built-in AI assistant for natural language project queries",
+        "Automation engine with rule builder and dry-run mode",
       ],
-      stack: ["React", "Node.js", "REST APIs", "Stripe"],
+      stack: ["React", "Tailwind CSS", "Node.js", "AI"],
     },
   },
 ];
@@ -97,16 +99,6 @@ function NowPlaying() {
   return (
     <div className="flex items-center gap-4 rounded-[6px] border border-border bg-surface p-4">
       <div className="relative shrink-0">
-        <div className="absolute inset-0 rounded-[6px] blur-[12px] opacity-45">
-          <img src={albumArt} alt="" className="size-full rounded-[6px]" />
-        </div>
-        <div
-          className="absolute -inset-px rounded-[6px] opacity-80"
-          style={{
-            backgroundImage:
-              "linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 50%, rgba(0,0,0,0.3) 100%)",
-          }}
-        />
         <img
           src={albumArt}
           alt="Album art"
@@ -117,19 +109,19 @@ function NowPlaying() {
       <div className="flex flex-1 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between min-w-0">
         <div className="flex flex-col gap-0.5 min-w-0">
           <span className="text-sm text-secondary">
-            I'm currently listening to
+            Wearing a new hat
           </span>
           <span className="text-base font-medium text-primary truncate">
-            Dan <span className="text-secondary">-</span> Noah Kahan
+            Design Engineer
           </span>
           <span className="text-xs capitalize text-muted">android</span>
         </div>
 
         <div className="flex items-center gap-1.5 shrink-0">
           <SoundBars />
-          <MusicLink icon={youtubeMusicIcon} alt="YouTube Music" />
-          <MusicLink icon={spotifyIcon} alt="Spotify" />
-          <MusicLink icon={appleMusicIcon} alt="Apple Music" />
+          <ToolIcon icon={figmaIcon} alt="Figma" />
+          <ToolIcon icon={claudeIcon} alt="Claude" className="size-6" />
+          <ToolIcon icon={vscodeIcon} alt="VS Code" />
         </div>
       </div>
     </div>
@@ -151,14 +143,11 @@ function SoundBars() {
   );
 }
 
-function MusicLink({ icon, alt }) {
+function ToolIcon({ icon, alt, className }) {
   return (
-    <a
-      href="#"
-      className="flex items-center justify-center rounded-full border border-surface-border bg-[rgba(255,255,255,0.04)] size-8"
-    >
-      <img src={icon} alt={alt} className="size-4" />
-    </a>
+    <div className="flex items-center justify-center rounded-full border border-surface-border bg-[rgba(255,255,255,0.04)] size-8">
+      <img src={icon} alt={alt} className={className || "size-4"} />
+    </div>
   );
 }
 
