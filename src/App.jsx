@@ -114,18 +114,18 @@ function NowPlaying() {
         />
       </div>
 
-      <div className="flex flex-1 items-center justify-between">
-        <div className="flex flex-col gap-0.5">
+      <div className="flex flex-1 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between min-w-0">
+        <div className="flex flex-col gap-0.5 min-w-0">
           <span className="text-sm text-secondary">
             I'm currently listening to
           </span>
-          <span className="text-base font-medium text-primary">
+          <span className="text-base font-medium text-primary truncate">
             Dan <span className="text-secondary">-</span> Noah Kahan
           </span>
           <span className="text-xs capitalize text-muted">android</span>
         </div>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1.5 shrink-0">
           <SoundBars />
           <MusicLink icon={youtubeMusicIcon} alt="YouTube Music" />
           <MusicLink icon={spotifyIcon} alt="Spotify" />
