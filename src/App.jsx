@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
-import albumArt from "./assets/album-art.png";
+import wizardHat from "./assets/wizard-hat.svg";
 import figmaIcon from "./assets/icons/figma.svg";
 import claudeIcon from "./assets/icons/claude.png";
 import vscodeIcon from "./assets/icons/vscode.svg";
@@ -107,9 +107,9 @@ function NowPlaying() {
     <div className="flex items-center gap-4 rounded-[6px] border border-border bg-surface p-4">
       <div className="relative shrink-0">
         <img
-          src={albumArt}
-          alt="Album art"
-          className="relative size-14 rounded-[6px] border border-surface-border shadow-[0px_12px_30px_0px_rgba(0,0,0,0.32)]"
+          src={wizardHat}
+          alt="Wizard hat"
+          className="relative size-14 rounded-[6px] shadow-[0px_12px_30px_0px_rgba(0,0,0,0.32)] animate-[wizard-float_3s_ease-in-out_infinite]"
         />
       </div>
 
@@ -285,7 +285,7 @@ function App() {
             Prudence
           </h1>
           <p className="mt-4 text-[13px] uppercase tracking-[2.42px] text-secondary">
-            AI PRODUCT DESIGNER
+            SENIOR AI PRODUCT DESIGNER
           </p>
 
           {/* Currently */}
