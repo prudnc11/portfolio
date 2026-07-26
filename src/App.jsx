@@ -11,7 +11,7 @@ import vscodeIcon from "./assets/icons/vscode.svg";
 const projects = [
   {
     name: "Aggregator Admin",
-    company: "byteship.dev",
+    company: "",
     description: "Managing the network of commodity aggregators",
     link: "http://cf-admin-jade.vercel.app",
     caseStudy: {
@@ -29,7 +29,7 @@ const projects = [
   },
   {
     name: "Ventryl",
-    company: "byteship.dev",
+    company: "",
     description: "Supply chain infrastructure for Africa downstream sector",
     caseStudy: {
       challenge:
@@ -46,7 +46,7 @@ const projects = [
   },
   {
     name: "NexaaSocial",
-    company: "byteship.dev",
+    company: "",
     description: "AI Social media management",
     link: "https://nexaa-frontend.vercel.app/dashboard",
     caseStudy: {
@@ -64,7 +64,7 @@ const projects = [
   },
   {
     name: "Sage",
-    company: "byteship.dev",
+    company: "",
     description: "Project management for engineering teams",
     link: "https://sage-blond-eight.vercel.app",
     caseStudy: {
@@ -179,9 +179,11 @@ function ProjectItem({ name, company, description, link, caseStudy }) {
                 <h3 className="font-serif text-xl text-primary leading-[30px]">
                   {name}
                 </h3>
-                <span className="text-[11px] uppercase tracking-[1.54px] text-muted">
-                  {company}
-                </span>
+                {company && (
+                  <span className="text-[11px] uppercase tracking-[1.54px] text-muted">
+                    {company}
+                  </span>
+                )}
               </div>
               {link ? (
                 <a
