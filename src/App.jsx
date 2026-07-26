@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import albumArt from "./assets/album-art.png";
 import nexxasocialIcon from "./assets/icons/nexxasocial.svg";
@@ -83,14 +84,14 @@ const projects = [
 
 function Nav() {
   return (
-    <nav className="flex items-center justify-center gap-2 pt-20 font-sans text-[11px] uppercase tracking-[1.98px]">
+    <nav className="flex items-center justify-center gap-2 pt-20 font-sans text-[13px] uppercase tracking-[1.98px]">
       <a href="#" className="text-primary">
         Home
       </a>
       <span className="text-muted/25">/</span>
-      <a href="#" className="text-muted">
-        Guestbook
-      </a>
+      <Link to="/playground" className="text-muted">
+        Playground
+      </Link>
     </nav>
   );
 }
@@ -108,10 +109,10 @@ function NowPlaying() {
 
       <div className="flex flex-1 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between min-w-0">
         <div className="flex flex-col gap-0.5 min-w-0">
-          <span className="text-sm text-secondary">
+          <span className="text-base text-secondary">
             Wearing a new hat
           </span>
-          <span className="text-base font-medium text-primary truncate">
+          <span className="text-lg font-medium text-primary truncate">
             Design Engineer
           </span>
           <span className="text-xs capitalize text-muted">android</span>
@@ -175,7 +176,7 @@ function ProjectItem({ name, company, description, link, caseStudy }) {
           <div className="flex flex-1 flex-col gap-3">
             <div className="flex items-start justify-between">
               <div className="flex flex-col gap-3">
-                <h3 className="font-serif text-lg text-primary leading-[28px]">
+                <h3 className="font-serif text-xl text-primary leading-[30px]">
                   {name}
                 </h3>
                 <span className="text-[11px] uppercase tracking-[1.54px] text-muted">
@@ -198,7 +199,7 @@ function ProjectItem({ name, company, description, link, caseStudy }) {
                 </span>
               )}
             </div>
-            <p className="text-[15px] text-secondary leading-[24.38px]">
+            <p className="text-base text-secondary leading-[26px]">
               {description}
             </p>
             <span className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[1px] text-muted transition-colors duration-300 group-hover:text-secondary mt-1">
@@ -226,13 +227,13 @@ function ProjectItem({ name, company, description, link, caseStudy }) {
             <div className="h-px bg-border" />
 
             <CaseStudySection label="The Challenge">
-              <p className="text-sm text-secondary leading-[22px]">
+              <p className="text-[15px] text-secondary leading-[24px]">
                 {caseStudy.challenge}
               </p>
             </CaseStudySection>
 
             <CaseStudySection label="The Solution">
-              <p className="text-sm text-secondary leading-[22px]">
+              <p className="text-[15px] text-secondary leading-[24px]">
                 {caseStudy.solution}
               </p>
             </CaseStudySection>
@@ -242,7 +243,7 @@ function ProjectItem({ name, company, description, link, caseStudy }) {
                 {caseStudy.impact.map((item, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-2 text-sm text-secondary leading-[22px]"
+                    className="flex items-start gap-2 text-[15px] text-secondary leading-[24px]"
                   >
                     <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-accent" />
                     {item}
@@ -281,10 +282,10 @@ function App() {
           <h1 className="font-serif text-[52px] text-primary tracking-[-1.04px] leading-[56.16px]">
             Prudence
           </h1>
-          <p className="mt-4 text-[11px] uppercase tracking-[2.42px] text-secondary">
+          <p className="mt-4 text-[13px] uppercase tracking-[2.42px] text-secondary">
             AI PRODUCT DESIGNER
           </p>
-          <p className="mt-5 text-sm text-secondary leading-[22.75px]">
+          <p className="mt-5 text-base text-secondary leading-[26px]">
             Creator of{" "}
             <a
               href="#"
@@ -313,7 +314,7 @@ function App() {
           </p>
 
           {/* Social Links */}
-          <div className="mt-6 flex items-center gap-3 text-sm text-secondary">
+          <div className="mt-6 flex items-center gap-3 text-base text-secondary">
             <a href="#" className="underline decoration-white/20">
               GitHub
             </a>
@@ -326,6 +327,17 @@ function App() {
               Twitter
             </a>
           </div>
+
+          {/* Currently */}
+          <p className="mt-8 text-[20px] text-secondary leading-[32px]">
+            <span className="inline-block size-2 rounded-full bg-accent animate-[pulse-dot_2s_ease-in-out_infinite] mr-2 align-middle" />
+            Currently designing for{" "}
+            <span className="text-primary">Aggregator</span> in the food
+            supply chain at{" "}
+            <span className="text-primary">Complete Farmer's</span>. Turning
+            informal traders into bankable, auditable actors with real-time
+            traceability from farm to buyer.
+          </p>
 
           {/* Now Playing */}
           <div className="mt-8 max-w-[448px]">
@@ -349,7 +361,7 @@ function App() {
 
         {/* Footer */}
         <footer className="mt-24 border-t border-border py-6">
-          <p className="font-serif text-sm text-muted">© Tribe · Prudence</p>
+          <p className="font-serif text-base text-muted">© Tribe · Prudence</p>
         </footer>
       </div>
       <Analytics />
