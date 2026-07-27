@@ -86,7 +86,7 @@ const projects = [
 
 function Nav() {
   return (
-    <nav className="flex items-center justify-end gap-2 pt-20 font-sans text-[13px] uppercase tracking-[1.98px]">
+    <nav className="flex items-center justify-end gap-2 pt-20 font-sans text-[11px] uppercase tracking-[1.98px]">
       <a href="#" className="text-primary">
         Home
       </a>
@@ -289,7 +289,7 @@ function App() {
           </p>
 
           {/* Currently */}
-          <p className="mt-8 text-[20px] text-[#D5D3D1] leading-[32px]">
+          <p className="mt-8 text-[20px] text-[#B4B4B4] leading-[32px]">
             <span className="inline-block size-2 rounded-full bg-accent animate-[pulse-dot_2s_ease-in-out_infinite] mr-2 align-middle" />
             Product designer who brings visual craft to products, shipping in
             code with AI, not just Figma. Currently designing experience for

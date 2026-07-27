@@ -5,9 +5,13 @@ import { Analytics } from "@vercel/analytics/react";
 // ─── Navigation ───
 function Nav() {
   return (
-    <nav className="flex items-center justify-center gap-2 pt-20 font-sans text-[11px] uppercase tracking-[1.98px]">
+    <nav className="flex items-center justify-end gap-2 pt-20 font-sans text-[11px] uppercase tracking-[1.98px]">
       <Link to="/" className="text-muted">
         Home
+      </Link>
+      <span className="text-muted/25">/</span>
+      <Link to="/designing-with-ai" className="text-muted">
+        Designing with AI
       </Link>
       <span className="text-muted/25">/</span>
       <Link to="/playground" className="text-primary">
