@@ -8,6 +8,25 @@ import vscodeIcon from "./assets/icons/vscode.svg";
 
 const projects = [
   {
+    name: "Sage",
+    description: "Project management for engineering teams",
+    link: "https://sage-blond-eight.vercel.app",
+    problem:
+      "Engineering teams needed a fast, opinionated project tracker that felt native to their workflow. Existing tools were either too bloated or too simple for real sprint management.",
+    solution:
+      "A Linear-inspired project management app with kanban boards, issue tracking, team workspaces, automation rules, roadmap views, and an AI assistant for querying project state.",
+    results: [
+      "Full issue lifecycle: backlog, in progress, review, done.",
+      "Built-in AI assistant for natural language project queries.",
+      "Automation engine with rule builder and dry-run mode.",
+    ],
+    role: [
+      "UX design strategy.",
+      "User interface & interaction design.",
+      "Frontend development.",
+    ],
+  },
+  {
     name: "Aggregator Admin",
     description: "Managing the network of commodity aggregators",
     link: "http://cf-admin-jade.vercel.app",
@@ -60,25 +79,6 @@ const projects = [
     role: [
       "Product design & strategy.",
       "AI interaction design.",
-      "Frontend development.",
-    ],
-  },
-  {
-    name: "Sage",
-    description: "Project management for engineering teams",
-    link: "https://sage-blond-eight.vercel.app",
-    problem:
-      "Engineering teams needed a fast, opinionated project tracker that felt native to their workflow. Existing tools were either too bloated or too simple for real sprint management.",
-    solution:
-      "A Linear-inspired project management app with kanban boards, issue tracking, team workspaces, automation rules, roadmap views, and an AI assistant for querying project state.",
-    results: [
-      "Full issue lifecycle: backlog, in progress, review, done.",
-      "Built-in AI assistant for natural language project queries.",
-      "Automation engine with rule builder and dry-run mode.",
-    ],
-    role: [
-      "UX design strategy.",
-      "User interface & interaction design.",
       "Frontend development.",
     ],
   },
@@ -289,7 +289,7 @@ function App() {
           </p>
 
           {/* Currently */}
-          <p className="mt-8 text-[20px] text-[#EFEFEF] leading-[32px]">
+          <p className="mt-8 text-[20px] text-[#D5D3D1] leading-[32px]">
             <span className="inline-block size-2 rounded-full bg-accent animate-[pulse-dot_2s_ease-in-out_infinite] mr-2 align-middle" />
             Product designer who brings visual craft to products, shipping in
             code with AI, not just Figma. Currently designing experience for
